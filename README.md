@@ -1,5 +1,5 @@
 # Design forms sign in or sign up
-![](forms.gif)
+![](src/forms.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
