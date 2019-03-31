@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import SocialContainer from './SocialContainer';
+import Overlay from './Overlay';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faFacebookF,
+  faGoogle,
+  faLinkedinIn
+} from '@fortawesome/free-brands-svg-icons';
+
+library.add(faFacebookF, faGoogle, faLinkedinIn);
 
 class App extends Component {
+  state = {
+    left: true
+  };
+
+  handleClick = () => {
+    this.setState({ left: !this.state.left });
+  };
+  settime;
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div
+        className={`container ${this.state.left ? ' ' : 'right-panel-active'}`}
+      >
+        <SocialContainer
+          left={this.state.left}
+          handleClick={this.handleClick}
+        />
+        <Overlay left={this.state.left} handleClick={this.handleClick} />
       </div>
     );
   }
