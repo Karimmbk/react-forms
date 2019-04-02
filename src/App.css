@@ -134,6 +134,7 @@ input:focus {
   margin: 15vh auto;
 }
 
+/* definindo o conteiner do forms com posicao abslute para mudar o left e right */
 .form-container {
   position: absolute;
   top: 0;
@@ -147,6 +148,7 @@ input:focus {
   z-index: 1;
 } */
 
+/* definindo inicialmente a posicao do conteiner todo a esquerda com metaade do container total */
 .sign-up-container {
   left: 0;
   width: 50%;
@@ -156,6 +158,7 @@ input:focus {
   transform: translateX(100%);
 } */
 
+/* quando a classe eh add faz uma transacao do elemento em 100% */
 .container.right-panel-active .sign-up-container {
   transform: translateX(100%);
   opacity: 1;
@@ -177,6 +180,7 @@ input:focus {
   }
 }
 
+/* inicialmente o overlay eh definido com medade do tamanho dele e overflow hidden para esconder metadade de um texto  */
 .overlay-container {
   position: absolute;
   top: 0;
@@ -188,10 +192,12 @@ input:focus {
   z-index: 100;
 }
 
+/* quando add a classe fazer o container transladar em -100% para fazer ele ficar a esquerda do container geral */
 .container.right-panel-active .overlay-container {
   transform: translateX(-100%);
 }
 
+/* estilo do overlay sendo definido a uma posicao de -100% a esquerda e com o dobro do tamanha para poder cobrir apenas uma metade do container central, ja q ele vai ser limitado pelo seu container */
 .overlay {
   background: #ff416c;
   background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
@@ -208,6 +214,7 @@ input:focus {
   transition: transform 0.6s ease-in-out;
 }
 
+/* quando a classe eh add fazer o container transladar em 50% para a direita */
 .container.right-panel-active .overlay {
   transform: translateX(50%);
 }
@@ -226,19 +233,23 @@ input:focus {
   transition: transform 0.6s ease-in-out;
 }
 
+/* efeito para o texto acompanhar a transicao do container */
 .overlay-left {
   transform: translateX(-20%);
 }
 
+/* quando clicando no botao chama a funcao para mudar o state de left */
 .container.right-panel-active .overlay-left {
   transform: translateX(0);
 }
 
+/* quando clicando no botao chama a funcao para mudar o state de left */
 .overlay-right {
   right: 0;
   transform: translateX(0);
 }
 
+/* quando clicando no botao chama a funcao para mudar o state de left */
 .container.right-panel-active .overlay-right {
   transform: translateX(20%);
 }
